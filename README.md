@@ -1,12 +1,12 @@
-# Simple Ameba Archive Library Analyzer
+# Simple Ameba Archive Library Analyzer/Generator
 
 This tool extract archive library and put the extracted object code into the ```decomposed``` folder, user can then disassemble the object code into assembly code for further analysis
 
 # How to use
 
-1. Put the ```.a``` file in the same directory as this readme file
+Put the ```.a``` file in the same directory as this readme file
 
-2. Extract files using CLI below
+## Extract files using CLI below
 For ameba 1 library,
 ```bash
 $ make amb1
@@ -17,7 +17,7 @@ For ameba D library,
 $ make ambd
 ```
 
-3. Analyze using CLI below,
+## Analyze using CLI below,
 For ameba 1,
 ```bash
 $ make analyze FILE=The name of your interested file without extension
@@ -30,4 +30,16 @@ $ make analyze FILE=cJSON
 For ameba D,
 ```bash
 $ make analyze BOARD=D FILE=The name of your interested file without extension
+```
+
+## To generate new archive file 
+
+For ameba 1,
+```bash
+$ make zip FILE=XXXX
+```
+
+For ameba d,
+```bash
+$ make zip BOARD=D FILE=cJSON
 ```
