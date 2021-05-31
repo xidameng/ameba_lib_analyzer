@@ -1,3 +1,4 @@
-archive_lib/
-archive_lib_new/
+archive_lib/*.a
+archive_lib_new/*.a
 unzipped
+*.a
