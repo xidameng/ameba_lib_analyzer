@@ -1,24 +1,33 @@
 # Simple Ameba Archive Library Analyzer/Generator
 
-This tool extract archive library and put the extracted object code into the ```decomposed``` folder, user can then disassemble the object code into assembly code for further analysis
+This tool extract archive library and put the extracted object code into the `unzipped` folder, user can then disassemble the object code into assembly code for further analysis
 
 # How to use
 
-Put the ```.a``` file in the same directory as this readme file
+This tool has 3 functions, 
+1. `unzip` -- unzip an archive library
+2. `analyze FILE=(the file name of your choice)` -- disassemble the object code into assemblers and dumped to txt file for further analysis
+3. `newlib` -- create a new "lib_arduino.a" that is specially designed for MicroPython SDK 
 
-## Extract files using CLI below
-For ameba 1 library,
-```bash
-$ make amb1
-```
+## Preparation
+Put the `.a` file in the "archive_lib" folder if you want to `unzip` or `analyze`
+If you wanna create new library, then put the new `.a` file in the "archive_lib_new" folder
 
+## Using `unzip`
 For ameba D library,
 ```bash
-$ make ambd
+$ make unzip
 ```
 
-## Analyze using CLI below,
-For ameba 1,
+For ameba 1 library,
+```bash
+$ make unzip BOARD=1
+```
+
+## Using `analyze`
+
+For ameba D,
+
 ```bash
 $ make analyze FILE=The name of your interested file without extension
 ```
@@ -27,19 +36,14 @@ Fore example, I am interested in analyzing the cJSON.o file, then I will type
 $ make analyze FILE=cJSON
 ```
 
-For ameba D,
-```bash
-$ make analyze BOARD=D FILE=The name of your interested file without extension
-```
-
-## To generate new archive file 
-
 For ameba 1,
 ```bash
-$ make zip FILE=XXXX
+$ make analyze FILE=The name of your interested file without extension
 ```
+
+## Using `newlib` 
 
 For ameba d,
 ```bash
-$ make zip BOARD=D FILE=cJSON
+$ make newlib
 ```

@@ -1,2 +1,3 @@
-*.a
-*.o
+archive_lib/
+archive_lib_new/
+unzipped
